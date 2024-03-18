@@ -3,7 +3,7 @@ import React from 'react'
 
 const VideoCard = ({movie}) => {
 
-    console.log(movie);
+  
 
    const {statistics, snippet} = movie
 
