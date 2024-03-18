@@ -2,3 +2,7 @@ export const MENU_URL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhC
 export const LOGO_URL = 'https://cdn.mos.cms.futurecdn.net/8gzcr6RpGStvZFA2qRt4v6-1200-80.jpg'
 export const USER_ICON_URL = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjp1nGpyDeZ9Yp6YMnsWoUOr28bCB6Rdnuog&usqp=CAU'
 export const SEARCH_ICON_URL = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ93wF2bcJ5CrxsgPlNsR2h6P_ETYwW2iHztw&usqp=CAU'
+export const YOUTUBE_API_KEY='AIzaSyDnfOVJ5V5aYQ-VNoCHhLQ5iqLXcZXqTMM'
+export const YOUTUBE_VIDEOS_API =
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +
+  YOUTUBE_API_KEY;

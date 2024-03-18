@@ -2,6 +2,8 @@ import React from 'react'
 import ButtonList from './ButtonList'
 import MainContainer from './MainContainer'
 import Sidebar from './Sidebar'
+import { Outlet } from 'react-router-dom'
+
 
 const Body = () => {
   return (
@@ -10,8 +12,7 @@ const Body = () => {
         <Sidebar/>
         </div>
         <div>
-        <ButtonList/>
-        <MainContainer/>
+        <Outlet/>
         </div>
     </div>
   )
