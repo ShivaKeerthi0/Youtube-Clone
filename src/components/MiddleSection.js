@@ -40,18 +40,19 @@ const MiddleSection = () => {
 
     const getSuggestionsOnSearch = async () =>{
 
-        
+        if(searchQuery !== null) {
+            const data = await fetch('https://thingproxy.freeboard.io/fetch/'+YOUTUBE_SEARCH_API+searchQuery);
+            const suggestions = await data.json();
+            console.log(suggestions[1]);
+            setSuggestions(suggestions[1]);
+            dispatch(addSuggestion(
+                    {
+                        [searchQuery]:suggestions[1],
+                    }
+                ))
 
-        console.log(searchQuery); 
-        const data = await fetch('https://thingproxy.freeboard.io/fetch/'+YOUTUBE_SEARCH_API+searchQuery);
-        const suggestions = await data.json();
-        console.log(suggestions[1]);
-        setSuggestions(suggestions[1]);
-        dispatch(addSuggestion(
-                {
-                    [searchQuery]:suggestions[1],
-                }
-            ))
+        }
+        
     }
 
   return (
@@ -66,7 +67,7 @@ const MiddleSection = () => {
 
         onFocus={
             ()=>{
-                 searchQuery && setShowSuggestions(true);
+                 setShowSuggestions(true);
             }
         }
 
@@ -79,7 +80,7 @@ const MiddleSection = () => {
         <button className="rounded-r-full p-2 border border-gray-300 bg-gray-200">
             Search
         </button>{
-            showSuggestions && searchQuery &&  (
+            showSuggestions && searchQuery && suggestions && (
                 
                 <div className='fixed bg-white w-[28.5rem] p-2 m-2 z-10 rounded-lg'>
                     {
