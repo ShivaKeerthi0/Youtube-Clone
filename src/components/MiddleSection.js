@@ -40,8 +40,10 @@ const MiddleSection = () => {
 
     const getSuggestionsOnSearch = async () =>{
 
+        
+
         console.log(searchQuery); 
-        const data = await fetch(YOUTUBE_SEARCH_API+searchQuery);
+        const data = await fetch('https://thingproxy.freeboard.io/fetch/'+YOUTUBE_SEARCH_API+searchQuery);
         const suggestions = await data.json();
         console.log(suggestions[1]);
         setSuggestions(suggestions[1]);
@@ -64,7 +66,7 @@ const MiddleSection = () => {
 
         onFocus={
             ()=>{
-                setShowSuggestions(true);
+                 searchQuery && setShowSuggestions(true);
             }
         }
 
